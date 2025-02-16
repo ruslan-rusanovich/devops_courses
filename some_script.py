@@ -2,4 +2,5 @@
 
 a = 3
 b = 0
-x = 3 / 0	# this is a bug
+if b != 0:	# fixed a bug
+	x = 3 / b
