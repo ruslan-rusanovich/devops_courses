@@ -1,0 +1,14 @@
+ 622  sudo apt update
+  623  sudo apt install java
+  624  sudo apt install default-jre
+  625  java --version
+655  sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+  656  echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+  657  sudo apt update -y
+  658  sudo apt install jenkins -y
+  659  sudo systemctl start jenkins && sudo systemctl enable jenkins
+  660  sudo systemctl status jenkins
+  661  cat var/lib/jenkins/secrets/initialAdminPassword
+  662  cd /var/lib/jenkins/secrets/
+  663  sudo cd /var/lib/jenkins/secrets/
+  664  sudo cat /var/lib/jenkins/secrets/initialAdminPassword

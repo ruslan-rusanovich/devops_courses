@@ -1,0 +1,74 @@
+Started by user admin
+Replayed #18
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on remote-agent1 in /home/jenkins/jenkins-agent/workspace/elastic
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Run Elastic in docker)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ whoami
+jenkins
+[Pipeline] sh
++ docker run -d elasticsearch:8.17.3
+Unable to find image 'elasticsearch:8.17.3' locally
+8.17.3: Pulling from library/elasticsearch
+d9802f032d67: Pulling fs layer
+f719964e8d43: Pulling fs layer
+f06e940b3b39: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+7d49c241623a: Pulling fs layer
+d9d8638aebd4: Pulling fs layer
+e667da6aebf5: Pulling fs layer
+611b553eec43: Pulling fs layer
+fc126464efb1: Pulling fs layer
+71e490af130d: Pulling fs layer
+d9d8638aebd4: Waiting
+e667da6aebf5: Waiting
+611b553eec43: Waiting
+fc126464efb1: Waiting
+71e490af130d: Waiting
+7d49c241623a: Waiting
+4f4fb700ef54: Waiting
+f06e940b3b39: Verifying Checksum
+f06e940b3b39: Download complete
+4f4fb700ef54: Verifying Checksum
+4f4fb700ef54: Download complete
+d9802f032d67: Verifying Checksum
+d9802f032d67: Download complete
+d9d8638aebd4: Verifying Checksum
+d9d8638aebd4: Download complete
+f719964e8d43: Verifying Checksum
+f719964e8d43: Download complete
+e667da6aebf5: Verifying Checksum
+e667da6aebf5: Download complete
+611b553eec43: Download complete
+fc126464efb1: Verifying Checksum
+fc126464efb1: Download complete
+71e490af130d: Verifying Checksum
+71e490af130d: Download complete
+d9802f032d67: Pull complete
+f719964e8d43: Pull complete
+f06e940b3b39: Pull complete
+4f4fb700ef54: Pull complete
+7d49c241623a: Verifying Checksum
+7d49c241623a: Download complete
+7d49c241623a: Pull complete
+d9d8638aebd4: Pull complete
+e667da6aebf5: Pull complete
+611b553eec43: Pull complete
+fc126464efb1: Pull complete
+71e490af130d: Pull complete
+Digest: sha256:2cc40b15dff85281ac804e7ff27cbc07b31fdd542e94ea7a2bdb6470e3b6bb68
+Status: Downloaded newer image for elasticsearch:8.17.3
+48826974a7126667905d496ae843c32ce4541ff629827cf199ce59d2a1993cfb
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

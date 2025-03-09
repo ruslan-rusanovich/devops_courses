@@ -1,0 +1,4 @@
+692  ssh-keygen -f ~/.ssh/jenkins_agent_key
+  693  cat /home/ruslan/.ssh/jenkins_agent_key
+  694  cat /home/ruslan/.ssh/jenkins_agent_key.pub
+  695  docker run -d --rm --name=agent1 -p 22:22 -e "JENKINS_AGENT_SSH_PUBKEY=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZjj+nEZfaUNz1Odd2mSPwiizpcZVEKVWAtXWaSxCod ruslan@ruslan-VirtualBox" jenkins/ssh-agent:alpine-jdk17

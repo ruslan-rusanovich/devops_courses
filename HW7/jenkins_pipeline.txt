@@ -1,0 +1,18 @@
+pipeline {
+    agent {
+        node {
+            label 'ssh-node'
+        }
+    }
+    stages {
+        stage('Run Elastic in docker') {
+            steps {
+                script {
+                    sh '''whoami'''
+                    sh '''docker run -d elasticsearch:8.17.3'''
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,6 @@
+750  cd /var/lib/jenkins/
+  751  ls -al
+  752  cd .ssh
+  753  sudo -u jenkins ssh-keygen -t rsa -b 2048
+ 767  sudo -u jenkins ssh-copy-id jenkins@192.168.0.106
+  768  sudo -u jenkins ssh jenkins@192.168.0.106
