@@ -1,0 +1,7 @@
+19G	/
+5.2G	/snap
+5.1G	/var
+4.8G	/usr
+461M	/home
+185M	/boot
+12M	/etc

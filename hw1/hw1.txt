@@ -1,0 +1,8 @@
+task1 (top7 dirs on server):
+
+sudo du -h --max-depth=1 / | sort -rh | head -n 7 > /home/ruslan/top_dirs.txt
+
+task2 (create user, add to sudoers):
+
+sudo adduser testuser
+sudo usermod -aG sudo testuser
