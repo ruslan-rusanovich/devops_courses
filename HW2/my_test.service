@@ -1,0 +1,9 @@
+[Unit]
+Description=TestService
+
+[Service]
+Type=simple
+ExecStart=/home/ruslan/hw2/my_service.sh
+
+[Install]
+WantedBy=multi-user.target

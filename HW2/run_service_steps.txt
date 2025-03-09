@@ -1,0 +1,7 @@
+This is how I created my test service:
+
+cd /etc/systemd/system
+sudo nano my_test.service
+systemctl daemon-reload
+systemctl start my_test.service
+systemctl stop my_test.service
