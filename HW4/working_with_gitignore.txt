@@ -1,0 +1,16 @@
+267  cd devops_courses/
+  268  ls -al
+  269  git status
+  270  touch some_txt_file.txt
+  271  touch some_img_file.png
+  272  git status
+  273  nano .gitignore 
+  274  git status
+  275  nano .gitignore 
+  276  git status
+  277  git add .
+  278  git commit -m "ignoring txt-files"
+  279  git config --global user.email "rrusanovich2@gmail.com"
+  280  git config --global user.username "ruslan-rusanovich"
+  281  git commit -m "ignoring txt-files"
+  282  git push

@@ -1,0 +1,22 @@
+242  cd .ssh
+  243  ls
+  244  ls -al
+  245  cat authorized_keys 
+  246  ssh-keygen -t ed25519
+  247  ls -al
+  248  nano config
+  249  cat id_ed25519.pub
+  250  clip < id_ed25519.pub
+  251  nano id_ed25519.pub
+  252  cd .ssh
+  253  ls -al
+  254  cat id_ed25519.pub 
+  255  cd ~
+  256  ls
+  257  mkdir hw4
+  258  cd hw4
+  259  git clone git@github.com:ruslan-rusanovich/devops_courses.git
+  260  sudo apt install git
+  261  git clone git@github.com:ruslan-rusanovich/devops_courses.git
+  262  ls
+  263  cd devops_courses/

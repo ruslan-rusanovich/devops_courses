@@ -1,0 +1,38 @@
+  283 git branch
+  284  git checkout -b new_feature
+  285  git status
+  286  ls
+  287  touch some_script.py
+  288  nano some_script.py 
+  289  git status
+  290  git add .
+  291  git commit -n "amazing python script with a bug"
+  292  git commit -m "amazing python script with a bug"
+  293  git checkout main 
+  294  git merge new_feature
+  295  ls
+  296  cat some_script.py 
+  297  git status
+  298  git checkout new_feature 
+  299  nano some_script.py 
+  300  git status
+  301  git add .
+  302  git commit -m "bug fixes in a the script"
+  303  git status
+  304  nano some_script.py 
+  305  git status
+  306  git add .
+  307  git commit -m "continue to develop the feature"
+  308  git status
+  309  git log
+  310  git checkout main
+  311  cat some_script.py 
+  312  git cherry-pick bfbd45b7cd4ef90304a2f28899810a6a1a986004
+  313  git status
+  314  git log
+  315  git status
+  316  cat some_script.py 
+  317  git push
+  318  git checkout new_feature 
+  319  git push
+  320  git push --set-upstream origin new_feature
