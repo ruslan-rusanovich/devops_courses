@@ -1,0 +1,19 @@
+# Подключаем windows slave
+
+### На стороне слэйва
+
+1. Скачал и создал новую VM Windows Server 2019
+2. Скачал и установил java от oracle (понадобился vpn для заведения учётки)
+3. Обновил env-path до java
+4. Докачал и активировал openSSH
+5. Настроил C:\Programdata\ssh\sshd_config:
+  - раскомментил PubkeyAuthentication yes
+  - раскомментил PasswordAuthentication yes
+6. Создал нового юзера jenkins
+7. Создал папку C:\Jenkins
+
+### На стороне master
+
+1. Завёл новые креды для винды (логин/пароль)
+2. Создал новый нод с подключением по ssh и новыми кредами
+3. Запустил windows-slave:
