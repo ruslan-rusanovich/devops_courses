@@ -1,5 +1,6 @@
 ### Pipeline
 
+<pre>
 pipeline {
     agent {
         node {
@@ -18,9 +19,11 @@ pipeline {
     }
 
 }
+</pre>
 
 ### Output
 
+<pre>
 Started by user admin
 Restarted from build #2, stage Run bat script
 [Pipeline] Start of Pipeline
@@ -56,3 +59,4 @@ Press any key to continue . . .
 [Pipeline] // node
 [Pipeline] End of Pipeline
 Finished: SUCCESS
+</pre>
