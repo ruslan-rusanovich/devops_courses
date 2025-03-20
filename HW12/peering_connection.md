@@ -1,8 +1,8 @@
 1. Создал 2 VPC, в каждом по subnet и 2 route tables.
 2. Сделал 1 subnet доступным из интернета:
-  - создал internet gw
-  - приаттачил его к vpc 1
-  - в route table этой vpc сделал новую запись 0.0.0.0/0 на igw
+    - создал internet gw
+    - приаттачил его к vpc 1
+    - в route table этой vpc сделал новую запись 0.0.0.0/0 на igw
 3. Создал в каждой VPC по инстансу (с публичным адресом и новой secure policy для ssh)
 4. Настроил Peering connection (не забыть принять запрос в сплывающем окне сверху):
   ![image](https://github.com/user-attachments/assets/1afeae9c-4da3-49d8-a223-78fe6e80f78f)
@@ -11,4 +11,5 @@
 6. Перекинул по scp .pem-ключ с домашней машины на инстанс из публичного сабнета: `scp -i devops.pem devops.pem ubuntu@54.221.33.92:/home/ubuntu/`
 7. Подконнектился на эту машину (через Instance connect)
 8. Подконнектился на инстанс из второго VPC по ssh, используя приватный ip:
-  ![image](https://github.com/user-attachments/assets/88283a17-0b6d-406e-b170-55eb9ce5702b)
+  ![image](https://github.com/user-attachments/assets/17691312-7df3-49bd-870d-0ff1082c115e)
+
