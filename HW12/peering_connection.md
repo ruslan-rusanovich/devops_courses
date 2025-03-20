@@ -10,6 +10,8 @@
   ![image](https://github.com/user-attachments/assets/36623b9f-9926-4109-8a81-3fcc539eda0e)
 6. Перекинул по scp .pem-ключ с домашней машины на инстанс из публичного сабнета: `scp -i devops.pem devops.pem ubuntu@54.221.33.92:/home/ubuntu/`
 7. Подконнектился на эту машину (через Instance connect)
-8. Подконнектился на инстанс из второго VPC по ssh, используя приватный ip:
-  ![image](https://github.com/user-attachments/assets/17691312-7df3-49bd-870d-0ff1082c115e)
+8. Поменял права на 400 для ключа
+9. Подконнектился на инстанс из второго VPC по ssh, используя приватный ip:
+  ![image](https://github.com/user-attachments/assets/58756fc7-b20b-4dc1-a038-1ce19a50601f)
+
 
