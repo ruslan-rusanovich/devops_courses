@@ -1,0 +1,10 @@
+terraform workspace select stage
+terraform apply -var-file ./stage.tfvars
+terraform workspace select qa
+terraform apply -var-file ./qa.tfvars
+
+terraform destroy -var-file ./qa.tfvars
+terraform workspace select stage
+terraform destroy -var-file ./stage.tfvars
+
+
