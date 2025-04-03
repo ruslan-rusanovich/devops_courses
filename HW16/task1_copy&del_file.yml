@@ -1,0 +1,24 @@
+- name: Copy and delete file
+  hosts: all
+
+
+  tasks:
+    - name: copy a file
+      ansible.builtin.copy:
+        src: ./file_to_copy.txt
+        dest: /home/{{ ansible_user }}/copied_file.txt
+
+    - name: check if file exists 1
+      include_tasks: check_file.yml
+      vars:
+        file_path: "/home/{{ ansible_user }}/copied_file.txt"
+
+    - name: delete file
+      ansible.builtin.file:
+        path: /home/{{ ansible_user }}/copied_file.txt
+        state: absent
+
+    - name: check if file exists 2
+      include_tasks: check_file.yml
+      vars:
+        file_path: "/home/{{ ansible_user }}/copied_file.txt"

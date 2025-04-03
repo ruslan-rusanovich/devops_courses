@@ -1,0 +1,12 @@
+- name: manage users
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: create a user
+      ansible.builtin.user:
+        name: ansible_user
+        create_home: yes
+        comment: some user comment
+        uid: 1077
+        group: admin

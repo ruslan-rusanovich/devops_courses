@@ -1,0 +1,12 @@
+- name: check if file exists
+  stat:
+    path: "{{ file_path }}"
+  register: stat_result
+- name: confirm file exists
+  debug:
+    msg: "File exists!"
+  when: stat_result.stat.exists
+- name: file not found
+  debug:
+    msg: "File not found!"
+  when: stat_result.stat.exists == False
