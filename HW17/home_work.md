@@ -12,7 +12,7 @@
     security_group: "sg-043fe1ab924e65e0f"
     instance_name: "nginx-instance"
     subnet: "subnet-08091e34ba8747d07"
-
+<br>
   tasks:
     - name: EC2
       amazon.aws.ec2_instance:
@@ -30,13 +30,13 @@
         tags:
           Environment: Ansible_tests
       register: ec2
-
+<br>
     - name: Add new instance to host group
       add_host:
         hostname: "{{ item.public_ip_address }}"
         groupname: launched
       loop: "{{ ec2.instances }}"
-      
+    <br> 
 - name: Install Docker and run Nginx
   hosts: launched
   become: yes
@@ -51,25 +51,25 @@
       apt:
         name: docker.io
         state: present
-
+<br>
     - name: add a user to docker group
       ansible.builtin.user:
         name: ubuntu
         groups: docker
         append: yes
-
+<br>
     - name: Start Docker service
       service:
         name: docker
         state: started
         enabled: yes
-
+<br>
     - name: Pull Nginx Docker image
       docker_image:
         name: nginx
         tag: latest
         source: pull
-
+<br>
     - name: Run Nginx container
       docker_container:
         name: nginx_container
