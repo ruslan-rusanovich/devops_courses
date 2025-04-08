@@ -1,6 +1,6 @@
 1. Накатить на EC2 с ansible full-access права на работу с EC2, чтобы не генерировать новый ключ от AWS
 2. Написать playbook:
-   <pre>
+<pre>
 - name: Create EC2 instance and install Docker with Nginx
   hosts: localhost
   gather_facts: no
@@ -77,7 +77,7 @@
         state: started
         ports:
           - "80:80"
-   </pre>
+</pre>
    
 3. Зайти на новый EC2 и проверить, что докер установлен, контейнер крутится.
 4. Удалить контейнер руками.
