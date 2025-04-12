@@ -1,0 +1,64 @@
+---
+- name: Restart EC2 instance and check availability
+  hosts: localhost
+  gather_facts: no
+  become: yes
+  vars:
+    instance_id: "i-06abd454dbb8a57d5"
+    region: "us-east-1"
+    ansible_ssh_private_key_file: devops.pem
+
+
+  tasks:
+    - name: Restart EC2 instance
+      amazon.aws.ec2_instance:
+        instance_ids:
+          - "{{ instance_id }}"
+        state: restarted
+        region: "{{ region }}"
+      register: ec2_restart
+
+
+    - name: Wait for the instance to be in running state
+      amazon.aws.ec2_instance_info:
+        region: "{{ region }}"
+        filters:
+          "instance-id": "{{ instance_id }}"
+      register: ec2_instance_info
+
+      until: ec2_instance_info.instances[0].state.name == 'running'
+      retries: 5
+      delay: 10
+
+
+    - name: Wait for the instance to be reachable
+      wait_for:
+        host: "{{ ec2_instance_info.instances[0].public_ip_address }}"
+        port: 22
+        delay: 10
+        timeout: 300
+        state: started
+
+
+    - name: Check if the instance is reachable using ping
+      ping:
+      delegate_to: "{{ ec2_instance_info.instances[0].public_ip_address }}"
+      register: ping_result
+    - name: Display ping result
+      debug:
+        var: ping_result
+
+
+    - name: Add new instance to host group
+      add_host:
+        hostname: "{{ ec2_instance_info.instances[0].public_ip_address }}"
+        groupname: rebooted
+
+
+- name: install tomcat
+  hosts: rebooted
+  become: yes
+  vars:
+    ansible_ssh_private_key_file: devops.pem
+  roles:
+    - robertdebock.tomcat
