@@ -70,7 +70,4 @@
             value: "root"
           - name: MONGO_INITDB_ROOT_PASSWORD
             value: "password"
-          volumeMounts:
-          - mountPath: "/usr/share/mongo"
-            name: mongo-data
 </pre>
